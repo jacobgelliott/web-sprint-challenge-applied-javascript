@@ -1,5 +1,21 @@
 const Tabs = (topics) => {
-  // TASK 3
+  const tabs = document.createElement('div')
+  tabs.classList.add('topics')
+
+  topics.forEach(topic => {
+    const tab = document.createElement('div')
+    tab.classList.add('tab')
+    tab.textContent = topic
+    tabs.append(tab)
+  })
+  return tabs
+}
+
+const tabsAppender = (selector) => {
+  
+}
+
+// TASK 3
   // ---------------------
   // Implement this function which takes an array of strings ("topics") as its only argument.
   // As an example, if the topics passed are ['javascript', 'bootstrap', 'technology']
@@ -13,9 +29,7 @@ const Tabs = (topics) => {
   //   <div class="tab">technology</div>
   // </div>
   //
-}
 
-const tabsAppender = (selector) => {
   // TASK 4
   // ---------------------
   // Implement this function which takes a css selector as its only argument.
@@ -23,6 +37,5 @@ const tabsAppender = (selector) => {
   // Find the array of topics inside the response, and create the tabs using the Tabs component.
   // Append the tabs to the element in the DOM that matches the selector passed to the function.
   //
-}
 
 export { Tabs, tabsAppender }
