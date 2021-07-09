@@ -1,3 +1,5 @@
+import axios from "axios"
+
 const Tabs = (topics) => {
   const tabs = document.createElement('div')
   tabs.classList.add('topics')
@@ -12,7 +14,13 @@ const Tabs = (topics) => {
 }
 
 const tabsAppender = (selector) => {
-  
+  axios.get('http://localhost:5000/api/topics')
+  .then(res => {
+    const tabsCon = res.data.topics;
+    console.log(tabsCon)
+    const tabsP = document.querySelector(selector)
+    tabsP.append(Tabs(tabsCon))
+  })
 }
 
 // TASK 3
